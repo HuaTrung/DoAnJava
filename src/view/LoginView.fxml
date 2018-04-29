@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" styleClass="parent" stylesheets="@login.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginView">
+   <center>
+      <Pane fx:id="contructPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="724.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="150.0" left="150.0" right="150.0" top="150.0" />
+         </BorderPane.margin>
+         <children>
+            <Pane fx:id="backgroundMain" layoutY="26.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="724.0" styleClass="backgroundMain">
+               <padding>
+                  <Insets bottom="25.0" />
+               </padding>
+               <children>
+                  <Label fx:id="label1" layoutX="24.0" layoutY="64.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="Bạn không có tài khoản ?" textFill="#fafafa">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="label2" layoutX="24.0" layoutY="102.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="Nhanh chóng lập ngay tài khoản" textFill="#fafafa">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="label3" layoutX="24.0" layoutY="124.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="và học về ngôn ngữ Java" textFill="#fafafa">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="btnTaoTaiKhoan" layoutX="24.0" layoutY="164.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="51.0" prefWidth="151.0" styleClass="btnTaoTaiKhoan" text="Tạo tài khoản" textAlignment="CENTER" textFill="#fafafa">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </JFXButton>
+                  <Label fx:id="label11" layoutX="435.0" layoutY="64.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="Đã có tài khoản ?" textFill="#fafafa">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="btnDangNhap" layoutX="437.0" layoutY="166.0" prefHeight="51.0" prefWidth="151.0" styleClass="btnTaoTaiKhoan" text="Đăng nhập" textAlignment="CENTER" textFill="#fafafa">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </JFXButton>
+                  <Label fx:id="label21" layoutX="437.0" layoutY="108.0" text="Nhanh chóng đăng nhập" textFill="#fafafa">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="label31" layoutX="437.0" layoutY="131.0" text="và học về ngôn ngữ Java" textFill="#fafafa">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="movePane" layoutX="325.0" layoutY="1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="359.0" styleClass="backgroundLogin">
+
+            </Pane>
+         </children>
+      </Pane>
+   </center>
+</BorderPane>
