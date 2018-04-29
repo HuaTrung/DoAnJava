@@ -1,56 +1,15 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
 .parent{
-    -fx-background-color: #FDFDFE;
-    -fx-background-radis:10%;
+  -fx-background-color: linear-gradient(#fcfafb 0%, #fff8fb 40%, #ffebee 70%, #fce4ec 100%);
 }
-.sidebar{
-    -fx-background-color: #FFF8E6;
+.navigation{
+	-fx-border-color: #fcfafb #fcfafb #bdbdbd #fcfafb ;
 }
-.close-btn{
-    -fx-background-color: #FF6058;
-    -fx-background-radius: 100%;
+.btnExit{
+	  
 }
-.close-btn:hover{
-    -fx-background-color: red;
-    -fx-background-radius: 100%;
-}
-.min-btn{
-    -fx-background-color: #27CA41;
-    -fx-background-radius: 100%;
-}
-.min-btn:hover{
-    -fx-background-color: green;
-    -fx-background-radius: 100%;
-}
-.max-btn{
-    -fx-background-color: #FFBD2D;
-    -fx-background-radius: 100%;
-}
-.max-btn:hover{
-    -fx-background-color: yellow;
-    -fx-background-radius: 100%;
-}
-.create-music-btn{
-    -fx-background-color: #397DFF;
-    -fx-background-radius: 5px;
-}
-.sidebar-btns{
-    -fx-background-color: transparent;
-    -fx-background-radius: 5px;
-}
-.sidebar-btns:hover{
-    -fx-background-color: #FDFDFE;
-    -fx-background-radius: 5px;
-}
-.white-round-carts{
-    -fx-background-color: #fff;
-    -fx-background-radius: 20px;
-}
-.white-round-strip{
-    -fx-background-color: #fff;
-    -fx-background-radius: 10px;
-}
-.round-btn{
-    -fx-background-color: #F5F8FF;
-    -fx-background-radius: 100%;
+
+.btnSection:hover {
+       -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,1), 10, 0, 0, 0);
+       -fx-opacity:1
 }

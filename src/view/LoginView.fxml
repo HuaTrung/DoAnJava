@@ -51,7 +51,7 @@
                         <Font size="17.0" />
                      </font>
                   </JFXButton>
-                  <Label fx:id="label21" layoutX="437.0" layoutY="108.0" text="Nhanh chóng đăng nhập" textFill="#fafafa">
+                  <Label fx:id="label21" layoutX="437.0" layoutY="107.0" text="Nhanh chóng đăng nhập" textFill="#fafafa">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -63,7 +63,7 @@
                   </Label>
                </children>
             </Pane>
-            <Pane fx:id="movePane" layoutX="325.0" layoutY="1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="359.0" styleClass="backgroundLogin">
+            <Pane fx:id="movePane" layoutX="325.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="359.0" styleClass="backgroundLogin">
 
             </Pane>
          </children>
