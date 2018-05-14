@@ -13,7 +13,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			Parent root = FXMLLoader.load(getClass().getResource("/view/LearningGUIView.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("/view/View.fxml"));
 			Scene scene = new Scene(root);
 //			scene.getStylesheets().add(getClass().getResource("/view/login.css").toExternalForm());
 			//primaryStage.initStyle(StageStyle.UNDECORATED);

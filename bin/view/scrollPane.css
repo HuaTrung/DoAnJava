@@ -1,24 +1,3 @@
-/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
-.parent{
-  -fx-background-color: linear-gradient(#fcfafb 0%, #fff8fb 40%, #ffebee 70%, #fce4ec 100%);
-}
-.navigation{
-	-fx-border-color: #fcfafb #fcfafb #bdbdbd #fcfafb ;
-}
-.btnExit{
-	  
-}
-.btnSection:hover {
-       -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,1), 10, 0, 0, 0);
-       -fx-opacity:1
-}
-.sidelearning{
-	 -fx-background-color:#eceff1;
-}
-.sideScroll{
-	-fx-background-color:#fbe9e7;
-}
-
 /*******************************************************************************
  *                                                                             *
  * Scroll Bar			                                                       *
@@ -26,12 +5,12 @@
  ******************************************************************************/
 
 .scroll-bar:vertical > .track-background, .scroll-bar:horizontal > .track-background {
-    -fx-background-color: #fffafb;
+    -fx-background-color: #F1F1F1;
     -fx-background-insets: 0.0;
 }
 
 .scroll-bar:vertical > .thumb, .scroll-bar:horizontal > .thumb {
-    -fx-background-color: #ffcdd2;
+    -fx-background-color: #BCBCBC;
     -fx-background-insets: 0.0;
     -fx-background-radius: 1.0;
 }
@@ -54,3 +33,41 @@
     -fx-background-color: rgb(150.0, 150.0, 150.0);
 }
 
+/* Up Arrow */
+.scroll-bar:vertical > .increment-button > .increment-arrow {
+    -fx-shape: "M298 426h428l-214 214z";
+}
+
+/* Down Arrow */
+.scroll-bar:vertical > .decrement-button > .decrement-arrow {
+    -fx-shape: "M298 598l214-214 214 214h-428z";
+}
+
+/* Right Arrow */    
+.scroll-bar:horizontal > .increment-button > .increment-arrow {
+    -fx-shape: "M0 428l0 -428l214 214l-214 214z";
+}
+
+/* Left Arrow */
+.scroll-bar:horizontal > .decrement-button > .decrement-arrow {
+    -fx-shape: "M214 0l0 428l-214 -214l214 -214z";
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Scroll Pane			                                                       *
+ *                                                                             *
+ ******************************************************************************/
+
+.scroll-pane {
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.scroll-pane:focused {
+    -fx-background-insets: 0;
+}
+
+.scroll-pane .corner {
+    -fx-background-insets: 0;
+}
