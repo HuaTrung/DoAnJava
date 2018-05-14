@@ -9,7 +9,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="350.0" stylesheets="@login.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <JFXButton layoutX="210.0" layoutY="316.0" styleClass="btnDangNhapDangKi" text="ĐĂNG KÍ">
+      <JFXButton fx:id="btnDangKi" layoutX="210.0" layoutY="316.0" styleClass="btnDangNhapDangKi" text="ĐĂNG KÍ">
          <font>
             <Font size="16.0" />
          </font></JFXButton>

@@ -1,25 +1,26 @@
 package main;
 	
 import javafx.application.Application;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
-import javafx.fxml.FXMLLoader;
+import javafx.stage.Stage;
 
 
 public class Main extends Application {
+	public static Stage primarySStage;
+	public static Scene primarySScene;
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			Parent root = FXMLLoader.load(getClass().getResource("/view/View.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("/view/LearningGUIView.fxml"));
 			Scene scene = new Scene(root);
 //			scene.getStylesheets().add(getClass().getResource("/view/login.css").toExternalForm());
 			//primaryStage.initStyle(StageStyle.UNDECORATED);
-			primaryStage.setScene(scene);
-			primaryStage.show();
+			primarySScene=scene;
+			primarySStage=primaryStage;
+			primarySStage.setScene(primarySScene);
+			primarySStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

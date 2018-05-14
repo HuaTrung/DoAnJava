@@ -1,0 +1,68 @@
+.cellTableNormal{
+	-fx-border-color:black black black black;
+	-fx-alignment:center;
+}
+
+.cellTableNormalLast{
+	-fx-border-color:black black black black;
+	-fx-alignment:center;
+}
+
+.cellTableNormalRight{
+	-fx-border-color:black black black black;
+	-fx-alignment:center;
+}
+.cellTableNormalRight:hover {
+     -fx-scale-x: 1.01;
+    -fx-scale-y: 1.01;
+    -fx-scale-z: 1;
+    -fx-border-color:black black black black;
+  	
+}
+
+
+.cellTableNormalRightlast{
+	-fx-border-color:black black black black;
+	-fx-alignment:center;
+}
+.cellTableNormalRightlast:hover {
+     -fx-scale-x: 1.01;
+    -fx-scale-y: 1.01;
+    -fx-scale-z: 1;
+    -fx-border-color:black black black black;
+  
+}
+
+
+.cellTableNormalCenterlast{
+	-fx-border-color:black black black black;
+	-fx-alignment:center;
+}
+.cellTableNormalCenterlast:hover {
+    -fx-scale-x: 1.01;
+    -fx-scale-y: 1.01;
+    -fx-scale-z: 1;
+    -fx-border-color:black black black black;
+}
+
+.cellSpecialLeft{
+	-fx-border-color:black black black black;
+	-fx-alignment:center;
+}
+.cellSpecialLeft:hover {
+    -fx-scale-x: 1.01;
+    -fx-scale-y: 1.01;
+    -fx-scale-z: 1;
+    -fx-border-color:black black black black;
+}
+
+.cellClass{
+	-fx-border-color:black black black black;
+	-fx-alignment:center;
+}
+.cellClass:hover {
+    -fx-scale-x: 1.01;
+    -fx-scale-y: 1.01;
+    -fx-scale-z: 1;
+    -fx-border-color:black black black black;
+}

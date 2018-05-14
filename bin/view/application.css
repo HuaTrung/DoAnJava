@@ -8,8 +8,13 @@
 .btnExit{
 	  
 }
-
 .btnSection:hover {
        -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,1), 10, 0, 0, 0);
        -fx-opacity:1
+}
+.sidelearning{
+	 -fx-background-color:#eceff1;
+}
+.sideScroll{
+	-fx-background-color:#fbe9e7;
 }

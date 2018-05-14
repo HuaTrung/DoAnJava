@@ -9,8 +9,8 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" styleClass="parent" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainView">
-   <top>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" styleClass="parent" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LearningGUIView">
+  <top>
       <Pane prefHeight="58.0" prefWidth="1024.0" styleClass="navigation" BorderPane.alignment="CENTER">
          <children>
             <JFXButton ellipsisString="" layoutX="885.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="32.0">
@@ -102,5 +102,20 @@
             </ImageView>
          </children>
       </Pane>
+   </center>
+   <center>
+      <Pane fx:id="learnPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXScrollPane fx:id="scrollPane" prefHeight="643.0" prefWidth="124.0">
+               <content>
+                  <VBox fx:id="VboxMenu" prefHeight="642.0" prefWidth="111.0" />
+               </content>
+            </JFXScrollPane>
+            <ScrollPane fx:id="MainGuiPane" layoutX="124.0" prefHeight="643.0" prefWidth="901.0">
+               <content>
+                  <Pane fx:id="GuiPane" prefHeight="1500.0" prefWidth="900.0" />
+               </content>
+            </ScrollPane>
+         </children></Pane>
    </center>
 </BorderPane>

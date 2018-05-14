@@ -73,7 +73,7 @@
       </Pane>
    </top>
    <center>
-      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <Pane fx:id="learnPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
             <ImageView fitHeight="275.0" fitWidth="401.0" layoutX="92.0" layoutY="47.0" opacity="0.9" pickOnBounds="true" preserveRatio="true" styleClass="btnSection">
                <image>
@@ -85,7 +85,7 @@
                   <Image url="@../image/mina2.jpg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="273.0" fitWidth="274.0" layoutX="735.0" layoutY="46.0" opacity="0.9" pickOnBounds="true" preserveRatio="true" styleClass="btnSection">
+            <ImageView fx:id="imgv3" fitHeight="273.0" fitWidth="274.0" layoutX="735.0" layoutY="46.0" opacity="0.9" pickOnBounds="true" preserveRatio="true" styleClass="btnSection">
                <image>
                   <Image url="@../image/mina3.jpg" />
                </image>

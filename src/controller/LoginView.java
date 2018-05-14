@@ -5,9 +5,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXPasswordField;
-import com.jfoenix.controls.JFXTextField;
 
+import javafx.animation.FadeTransition;
 import javafx.animation.SequentialTransition;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
@@ -27,6 +26,8 @@ public class LoginView implements Initializable {
 	private Pane backgroundMain;
 	@FXML
 	private Pane mainPane;
+	
+	public static Pane mainSPane;
 	@FXML
 	private Pane movePane;
 	@FXML
@@ -45,7 +46,8 @@ public class LoginView implements Initializable {
 	private Label label21;
 	@FXML
 	private Label label31;
-
+	@FXML 
+	private JFXButton btnDangNhapInForm;
 	@FXML
 	private void changeToRegisForm(ActionEvent event) throws IOException {
 		TranslateTransition transition1 = new TranslateTransition();
@@ -117,10 +119,37 @@ public class LoginView implements Initializable {
 		label2.setVisible(true);
 		label3.setVisible(true);
 	}
-
+	public void goIntoMainView( ) {
+		FadeTransition fadeTransition=new FadeTransition();
+		fadeTransition.setDuration(Duration.millis(1000));
+		fadeTransition.setNode(mainPane);
+		fadeTransition.setFromValue(1);
+		fadeTransition.setToValue(0);
+		fadeTransition.play();
+	}
+	public void makeFadeOut() {
+		FadeTransition fadeTransition=new FadeTransition();
+		fadeTransition.setDuration(Duration.millis(1000));
+		fadeTransition.setNode(mainPane);
+		fadeTransition.setFromValue(1);
+		fadeTransition.setToValue(0);
+		fadeTransition.setOnFinished((ActionEvent event) -> {
+			try {
+				Parent guiView;
+				guiView= FXMLLoader.load(getClass().getResource("/view/View.fxml"));
+				mainPane.getChildren().removeAll();
+				mainPane.getChildren().setAll(guiView);
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+    	  });
+		fadeTransition.play();
+	}
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
+		mainSPane=mainPane;
 		Parent fxml;
 		try {
 			fxml = FXMLLoader.load(getClass().getResource("/view/DangNhapChinh.fxml"));
@@ -151,6 +180,7 @@ public class LoginView implements Initializable {
 				e.printStackTrace();
 			}
 		});
+		
 	}
 
 }
