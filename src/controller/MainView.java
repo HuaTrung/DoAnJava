@@ -33,12 +33,11 @@ public class MainView implements Initializable {
 			@Override
 			public void handle(MouseEvent arg0) {
 				FadeTransition fadeTransition = new FadeTransition();
-				fadeTransition.setDuration(Duration.millis(100));
+				fadeTransition.setDuration(Duration.millis(400));
 				fadeTransition.setNode(learnPane);
 				fadeTransition.setFromValue(1);
 				fadeTransition.setToValue(0);
 				fadeTransition.setOnFinished((ActionEvent event) -> {
-
 					loadNextScene();
 				});
 				fadeTransition.play();

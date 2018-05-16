@@ -39,10 +39,15 @@ public class LearningGUIView implements Initializable {
 		MainGuiPane.setHbarPolicy(ScrollBarPolicy.NEVER);
 		StackPane header = (StackPane) scrollPane.getChildren().get(1);
 		header.setPrefHeight(0);
-		Button item = new Button("GIỚI THIỆU");
-		item.setOnAction(arg01 -> {
+		
+		//
+		Button btnGioiThieu = new Button("GIỚI THIỆU");
+		btnGioiThieu.prefWidthProperty().bind(VboxMenu.prefWidthProperty());
+		btnGioiThieu.setPrefHeight(40);
+		btnGioiThieu.getStyleClass().add("btnSCroll");
+		btnGioiThieu.setOnAction(arg01 -> {
 			try {
-				Parent fxml = FXMLLoader.load(getClass().getResource("/view/IntroSwing.fxml"));
+				Parent fxml = FXMLLoader.load(getClass().getResource("/view/IntroSwingView.fxml"));
 				GuiPane.getChildren().removeAll();
 				GuiPane.getChildren().setAll(fxml);
 			} catch (IOException e) {
@@ -50,7 +55,9 @@ public class LearningGUIView implements Initializable {
 				e.printStackTrace();
 			}
 		});
-		VboxMenu.getChildren().add(item);
+		VboxMenu.getChildren().add(btnGioiThieu);
+		
+		//
 		JFXScrollPane.smoothScrolling((ScrollPane) scrollPane.getChildren().get(0));
 		// for(int i=0;i<500;i++) {
 		// Button a=new Button("asdasd");

@@ -30,7 +30,7 @@ public class WaitingProcess implements Initializable {
 		
 		final Animation animation = new Transition() {
 			{
-				setCycleDuration(Duration.seconds(1));
+				setCycleDuration(Duration.millis(500));
 			}
 
 			protected void interpolate(double frac) {
