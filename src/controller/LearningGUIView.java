@@ -47,7 +47,8 @@ public class LearningGUIView implements Initializable {
 		btnGioiThieu.getStyleClass().add("btnSCroll");
 		btnGioiThieu.setOnAction(arg01 -> {
 			try {
-				Parent fxml = FXMLLoader.load(getClass().getResource("/view/IntroSwingView.fxml"));
+				Parent fxml = FXMLLoader.load(getClass().getResource("/view/JButtonView.fxml"));
+				GuiPane.setPrefHeight(2500);
 				GuiPane.getChildren().removeAll();
 				GuiPane.getChildren().setAll(fxml);
 			} catch (IOException e) {

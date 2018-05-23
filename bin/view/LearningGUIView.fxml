@@ -116,7 +116,7 @@
             </JFXScrollPane>
             <ScrollPane fx:id="MainGuiPane" layoutX="124.0" prefHeight="643.0" prefWidth="901.0">
                <content>
-                  <Pane fx:id="GuiPane" prefHeight="1500.0" prefWidth="900.0" />
+                  <Pane fx:id="GuiPane" prefHeight="2000.0" prefWidth="900.0" />
                </content>
             </ScrollPane>
          </children></Pane>

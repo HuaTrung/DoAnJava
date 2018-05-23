@@ -35,5 +35,10 @@
 }
 .title{
 	-fx-text-fill: #610B38;
+	-fx-font-size	:25;
 }
 
+.content{
+	-fx-text-fill: black;
+	-fx-font-size	:15;
+}

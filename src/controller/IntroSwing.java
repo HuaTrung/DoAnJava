@@ -373,7 +373,7 @@ public class IntroSwing implements Initializable {
 		//
 		
 		// 1 đoạn
-		ToolTipCustom componenttt=new ToolTipCustom("Đây là lớp cha của mọi class.\nTất cả mọi class đều có \"Object\" như là lớp cha.",336+96+10,875);
+		ToolTipCustom componenttt=new ToolTipCustom("Đối tượng được dùng để biểu diễn đồ họa trên màn hình\nmà người dùng có thể tương tác được.",336+96+10,875);
 		componentcl.setOnMouseEntered(e -> {
 			final Animation animation = new Transition() {
 				{
@@ -400,7 +400,7 @@ public class IntroSwing implements Initializable {
 			mainIntro.getChildren().remove(componenttt);
 		});
 		//
-		
+		ToolTipCustom containertt=new ToolTipCustom("Đây là Component dùng để chứa các Component khác",212+96+10,1021);
 		containercl.setOnMouseEntered(e -> {
 			final Animation animation = new Transition() {
 				{
@@ -415,9 +415,19 @@ public class IntroSwing implements Initializable {
 				}
 			};
 			animation.play();
+                        FadeTransition ft = new FadeTransition(Duration.millis(300), containertt);
+			ft.setFromValue(0.0);
+			ft.setToValue(1.0);
+			ft.play();
+                        mainIntro.getChildren().add(containertt);
 		});
 		
-		
+		containercl.setOnMouseExited(e->{
+			mainIntro.getChildren().remove(containertt);
+		});
+                
+                ToolTipCustom jcomponenttt=new ToolTipCustom("Lớp cơ sở cho tất cả các Swing component trừ \ncác cấp cao hơn.",
+                        479+96+10,1021);
 		jcomponentcl.setOnMouseEntered(e -> {
 			final Animation animation = new Transition() {
 				{
@@ -432,7 +442,19 @@ public class IntroSwing implements Initializable {
 				}
 			};
 			animation.play();
+                        FadeTransition ft = new FadeTransition(Duration.millis(300), jcomponenttt);
+			ft.setFromValue(0.0);
+			ft.setToValue(1.0);
+			ft.play();
+                        mainIntro.getChildren().add(jcomponenttt);
 		});
+                
+                jcomponentcl.setOnMouseExited(e->{
+			mainIntro.getChildren().remove(jcomponenttt);
+		});
+                
+                ToolTipCustom windowtt=new ToolTipCustom("Đây là cửa sổ cao nhất không có đường viền, không có thanh menu \nvà thường là khung hình chữ nhật.",
+                        118+96+10,1160);
 		windowcl.setOnMouseEntered(e -> {
 			final Animation animation = new Transition() {
 				{
@@ -446,8 +468,20 @@ public class IntroSwing implements Initializable {
 					windowcl.setBackground(new Background(new BackgroundFill(vColor, CornerRadii.EMPTY, Insets.EMPTY)));
 				}
 			};
-			animation.play();
+                        animation.play();
+			FadeTransition ft = new FadeTransition(Duration.millis(300), windowtt);
+			ft.setFromValue(0.0);
+			ft.setToValue(1.0);
+			ft.play();
+                        mainIntro.getChildren().add(windowtt);
 		});
+                
+                windowcl.setOnMouseExited(e->{
+			mainIntro.getChildren().remove(windowtt);
+		});
+                
+                ToolTipCustom paneltt=new ToolTipCustom("Đây là lớp Container đơn giản nhất, cung cấp không gian cho ứng\ndụng đính kèm bất kỳ component khác bao gồm các Panel khác.",
+                        346+96+10,1160);
 		panelcl.setOnMouseEntered(e -> {
 			final Animation animation = new Transition() {
 				{
@@ -461,8 +495,20 @@ public class IntroSwing implements Initializable {
 					panelcl.setBackground(new Background(new BackgroundFill(vColor, CornerRadii.EMPTY, Insets.EMPTY)));
 				}
 			};
-			animation.play();
+                        animation.play();
+			FadeTransition ft = new FadeTransition(Duration.millis(300), paneltt);
+			ft.setFromValue(0.0);
+			ft.setToValue(1.0);
+			ft.play();
+                        mainIntro.getChildren().add(paneltt);
 		});
+                
+                panelcl.setOnMouseExited(e->{
+			mainIntro.getChildren().remove(paneltt);
+		});
+                
+                ToolTipCustom framett=new ToolTipCustom("Đây là cửa sổ có tiêu đề và khung viền.",
+                        26+96+10,1319);
 		framecl.setOnMouseEntered(e -> {
 			final Animation animation = new Transition() {
 				{
@@ -476,8 +522,20 @@ public class IntroSwing implements Initializable {
 					framecl.setBackground(new Background(new BackgroundFill(vColor, CornerRadii.EMPTY, Insets.EMPTY)));
 				}
 			};
-			animation.play();
+                        animation.play();
+			FadeTransition ft = new FadeTransition(Duration.millis(300), framett);
+			ft.setFromValue(0.0);
+			ft.setToValue(1.0);
+			ft.play();
+                        mainIntro.getChildren().add(framett);
 		});
+                
+                framecl.setOnMouseExited(e->{
+			mainIntro.getChildren().remove(framett);
+		});
+                
+                ToolTipCustom dialogtt=new ToolTipCustom("Đây là cửa sổ có tiêu đề và khung viền nhưng thường sử\ndụng để lấy một số hình thức đầu vào của người dùng.",
+                        208+96+10,1319);
 		dialogcl.setOnMouseEntered(e -> {
 			final Animation animation = new Transition() {
 				{
@@ -491,8 +549,20 @@ public class IntroSwing implements Initializable {
 					dialogcl.setBackground(new Background(new BackgroundFill(vColor, CornerRadii.EMPTY, Insets.EMPTY)));
 				}
 			};
-			animation.play();
+                        animation.play();
+			FadeTransition ft = new FadeTransition(Duration.millis(300), dialogtt);
+			ft.setFromValue(0.0);
+			ft.setToValue(1.0);
+			ft.play();
+                        mainIntro.getChildren().add(dialogtt);
 		});
+                
+                dialogcl.setOnMouseExited(e->{
+			mainIntro.getChildren().remove(dialogtt);
+		});
+                
+                ToolTipCustom applettt=new ToolTipCustom("Đây là một chương trình nhỏ được thiết kế ra nhằm\nnhúng bên trong ứng dụng khác thường là Webpage.",
+                        346+96+10,1276);
 		appletcl.setOnMouseEntered(e -> {
 			final Animation animation = new Transition() {
 				{
@@ -506,8 +576,20 @@ public class IntroSwing implements Initializable {
 					appletcl.setBackground(new Background(new BackgroundFill(vColor, CornerRadii.EMPTY, Insets.EMPTY)));
 				}
 			};
-			animation.play();
+                        animation.play();
+			FadeTransition ft = new FadeTransition(Duration.millis(300), applettt);
+			ft.setFromValue(0.0);
+			ft.setToValue(1.0);
+			ft.play();
+                        mainIntro.getChildren().add(applettt);
 		});
+                
+                appletcl.setOnMouseExited(e->{
+			mainIntro.getChildren().remove(applettt);
+		});
+                
+                ToolTipCustom jlabeltt=new ToolTipCustom("Vùng hiện thị một đoạn văn bản ngắn hoặc\nhình ảnh hoặc cả hai.",
+                        422,766);
 		jlabelcl.setOnMouseEntered(e -> {
 			final Animation animation = new Transition() {
 				{
@@ -521,8 +603,20 @@ public class IntroSwing implements Initializable {
 					jlabelcl.setBackground(new Background(new BackgroundFill(vColor, CornerRadii.EMPTY, Insets.EMPTY)));
 				}
 			};
-			animation.play();
+                        animation.play();
+			FadeTransition ft = new FadeTransition(Duration.millis(300), jlabeltt);
+			ft.setFromValue(0.0);
+			ft.setToValue(1.0);
+			ft.play();
+                        mainIntro.getChildren().add(jlabeltt);
 		});
+                
+                jlabelcl.setOnMouseExited(e->{
+			mainIntro.getChildren().remove(jlabeltt);
+		});
+                
+                ToolTipCustom jlisttt=new ToolTipCustom("Component hiển thị danh sách các đối tượng \nvà cho phép người dùng chọn một hay nhiều\nmục.",
+                        407,845);
 		jlistcl.setOnMouseEntered(e -> {
 			final Animation animation = new Transition() {
 				{
@@ -537,7 +631,19 @@ public class IntroSwing implements Initializable {
 				}
 			};
 			animation.play();
+			FadeTransition ft = new FadeTransition(Duration.millis(300), jlisttt);
+			ft.setFromValue(0.0);
+			ft.setToValue(1.0);
+			ft.play();
+                        mainIntro.getChildren().add(jlisttt);
 		});
+                
+                jlistcl.setOnMouseExited(e->{
+			mainIntro.getChildren().remove(jlisttt);
+		});
+                
+                ToolTipCustom jtablett=new ToolTipCustom("Được sử dụng để hiện thị và chỉnh sửa trên các ô\ncủa bảng 2 chiều.",
+                        390,924);
 		jtablecl.setOnMouseEntered(e -> {
 			final Animation animation = new Transition() {
 				{
@@ -552,7 +658,19 @@ public class IntroSwing implements Initializable {
 				}
 			};
 			animation.play();
+			FadeTransition ft = new FadeTransition(Duration.millis(300), jtablett);
+			ft.setFromValue(0.0);
+			ft.setToValue(1.0);
+			ft.play();
+                        mainIntro.getChildren().add(jtablett);
 		});
+                
+                jtablecl.setOnMouseExited(e->{
+			mainIntro.getChildren().remove(jtablett);
+		});
+                
+                ToolTipCustom jcomboboxtt=new ToolTipCustom("Component kết hợp một drop-down list với một\nbutton hoặc một vùng có thể điền vào được.",
+                        392,1003);
 		jcomboboxcl.setOnMouseEntered(e -> {
 			final Animation animation = new Transition() {
 				{
@@ -567,7 +685,19 @@ public class IntroSwing implements Initializable {
 				}
 			};
 			animation.play();
+			FadeTransition ft = new FadeTransition(Duration.millis(300), jcomboboxtt);
+			ft.setFromValue(0.0);
+			ft.setToValue(1.0);
+			ft.play();
+                        mainIntro.getChildren().add(jcomboboxtt);
 		});
+                
+                jcomboboxcl.setOnMouseExited(e->{
+			mainIntro.getChildren().remove(jcomboboxtt);
+		});
+                
+                ToolTipCustom jslidertt=new ToolTipCustom("Component cho phép người dùng lựa chọn một\ngiá trị trong một dãy cụ thể giới hạn bằng một\ncon trượt.",
+                        394,1082);
 		jslidercl.setOnMouseEntered(e -> {
 			final Animation animation = new Transition() {
 				{
@@ -582,7 +712,19 @@ public class IntroSwing implements Initializable {
 				}
 			};
 			animation.play();
+			FadeTransition ft = new FadeTransition(Duration.millis(300), jslidertt);
+			ft.setFromValue(0.0);
+			ft.setToValue(1.0);
+			ft.play();
+                        mainIntro.getChildren().add(jslidertt);
 		});
+                
+                jslidercl.setOnMouseExited(e->{
+			mainIntro.getChildren().remove(jslidertt);
+		});
+                
+                ToolTipCustom jmenutt=new ToolTipCustom("Cửa sổ bật lên hiện thị các JMenuItem khi\nngười dùng chọn một mục trên JMenuBar.",
+                        427,1161);
 		jmenucl.setOnMouseEntered(e -> {
 			final Animation animation = new Transition() {
 				{
@@ -597,7 +739,19 @@ public class IntroSwing implements Initializable {
 				}
 			};
 			animation.play();
+			FadeTransition ft = new FadeTransition(Duration.millis(300), jmenutt);
+			ft.setFromValue(0.0);
+			ft.setToValue(1.0);
+			ft.play();
+                        mainIntro.getChildren().add(jmenutt);
 		});
+                
+                jmenucl.setOnMouseExited(e->{
+			mainIntro.getChildren().remove(jmenutt);
+		});
+                
+                ToolTipCustom jabstractbuttontt=new ToolTipCustom("Định nghĩa các hành vi phổ biến cho Button và\ncác MenuItem.",
+                        404,1240);
 		abstractMenucl.setOnMouseEntered(e -> {
 			final Animation animation = new Transition() {
 				{
@@ -612,7 +766,19 @@ public class IntroSwing implements Initializable {
 				}
 			};
 			animation.play();
+			FadeTransition ft = new FadeTransition(Duration.millis(300), jabstractbuttontt);
+			ft.setFromValue(0.0);
+			ft.setToValue(1.0);
+			ft.play();
+                        mainIntro.getChildren().add(jabstractbuttontt);
 		});
+                
+                abstractMenucl.setOnMouseExited(e->{
+			mainIntro.getChildren().remove(jabstractbuttontt);
+		});
+                
+                ToolTipCustom jbuttontt=new ToolTipCustom("Tạo nút \"push\" có thể chỉnh cấu hình ở\nmức độ nào đó bởi Actions.",
+                        450,1327);
 		jbuttoncl.setOnMouseEntered(e -> {
 			final Animation animation = new Transition() {
 				{
@@ -627,6 +793,15 @@ public class IntroSwing implements Initializable {
 				}
 			};
 			animation.play();
+			FadeTransition ft = new FadeTransition(Duration.millis(300), jbuttontt);
+			ft.setFromValue(0.0);
+			ft.setToValue(1.0);
+			ft.play();
+                        mainIntro.getChildren().add(jbuttontt);
+		});
+                
+                jbuttoncl.setOnMouseExited(e->{
+			mainIntro.getChildren().remove(jbuttontt);
 		});
 		// cell9.setOnMouseExited(e -> {
 		// cell9.getStyleClass().add("isNotHover");

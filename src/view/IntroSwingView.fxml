@@ -14,7 +14,7 @@
          <font>
             <Font size="25.0" />
          </font></Label>
-      <Label layoutX="37.0" layoutY="70.0" text="Java Swing là một phần của Java Foundation Classes (JDC) được sử dụng để tạo các cửa sổ ứng dụng. Nó được xây dựng ở top&#10;của AWT ( Abstract Windwing Toolkit ) API and được viết hoàn toàn bằng Java.">
+      <Label layoutX="37.0" layoutY="70.0" styleClass="content" text="Java Swing là một phần của Java Foundation Classes (JDC) được sử dụng để tạo các cửa sổ ứng dụng. Nó được xây dựng ở top&#10;của AWT ( Abstract Windwing Toolkit ) API and được viết hoàn toàn bằng Java.">
          <font>
             <Font size="15.0" />
          </font>
@@ -24,17 +24,17 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="37.0" layoutY="124.0" text="Không giống như AWT, Java Swing cung cấp một nền tảng độc lập và các component nhẹ hơn. ">
+      <Label layoutX="37.0" layoutY="124.0" styleClass="content" text="Không giống như AWT, Java Swing cung cấp một nền tảng độc lập và các component nhẹ hơn. ">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="37.0" layoutY="151.0" text="Java Swing package cung cấp các classes cho Java Swing API như JButton, JTextField, JTextArea, JRadioButton, JCheckbox, ">
+      <Label layoutX="37.0" layoutY="151.0" styleClass="content" text="Java Swing package cung cấp các classes cho Java Swing API như JButton, JTextField, JTextArea, JRadioButton, JCheckbox, ">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="14.0" layoutY="178.0" text="JMenu, JColorChooser, ... .">
+      <Label layoutX="14.0" layoutY="178.0" styleClass="content" text="JMenu, JColorChooser, ... .">
          <font>
             <Font size="15.0" />
          </font>
@@ -44,7 +44,7 @@
             <Font size="25.0" />
          </font>
       </Label>
-      <Label layoutX="37.0" layoutY="253.0" text="Bảng sau liệt kê sự khác nhau đặc trưng giữa GWT và Swing">
+      <Label layoutX="37.0" layoutY="253.0" styleClass="content" text="Bảng sau liệt kê sự khác nhau đặc trưng giữa GWT và Swing">
          <font>
             <Font size="15.0" />
          </font>
@@ -54,7 +54,7 @@
             <Font size="25.0" />
          </font>
       </Label>
-      <Label layoutX="37.0" layoutY="724.0" text="Hệ thống phân cấp của Java Swing API được đưa ra dưới đây.">
+      <Label layoutX="37.0" layoutY="724.0" styleClass="content" text="Hệ thống phân cấp của Java Swing API được đưa ra dưới đây.">
          <font>
             <Font size="15.0" />
          </font>
