@@ -8,228 +8,228 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<Pane fx:id="mainIntro" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1500.0" prefWidth="901.0" stylesheets="@IntroSwing.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.IntroSwing">
+<Pane fx:id="mainIntro" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1500.0" prefWidth="901.0" stylesheets="@IntroSwing.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.IntroSwingController">
    <children>
-      <Label layoutX="33.0" layoutY="21.0" text="Giới thiệu về Java Swing">
+      <Label fx:id="gioithieuLabel" layoutX="33.0" layoutY="21.0" styleClass="title">
          <font>
             <Font size="25.0" />
          </font></Label>
-      <Label layoutX="37.0" layoutY="70.0" text="Java Swing là một phần của Java Foundation Classes (JDC) được sử dụng để tạo các cửa sổ ứng dụng. Nó được xây dựng ở top">
+      <Label layoutX="37.0" layoutY="70.0" styleClass="content" text="Java Swing là một phần của Java Foundation Classes (JDC) được sử dụng để tạo các cửa sổ ứng dụng. Nó được xây dựng ở top&#10;của AWT ( Abstract Windwing Toolkit ) API and được viết hoàn toàn bằng Java.">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="20.0" layoutY="97.0" text="của AWT ( Abstract Windwing Toolkit ) API and được viết hoàn toàn bằng Java.">
+      <Label layoutX="20.0" layoutY="97.0">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="37.0" layoutY="124.0" text="Không giống như AWT, Java Swing cung cấp một nền tảng độc lập và các component nhẹ hơn. ">
+      <Label layoutX="37.0" layoutY="124.0" styleClass="content" text="Không giống như AWT, Java Swing cung cấp một nền tảng độc lập và các component nhẹ hơn. ">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="37.0" layoutY="151.0" text="Java Swing package cung cấp các classes cho Java Swing API như JButton, JTextField, JTextArea, JRadioButton, JCheckbox, ">
+      <Label layoutX="37.0" layoutY="151.0" styleClass="content" text="Java Swing package cung cấp các classes cho Java Swing API như JButton, JTextField, JTextArea, JRadioButton, JCheckbox, ">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="14.0" layoutY="178.0" text="JMenu, JColorChooser, ... .">
+      <Label layoutX="14.0" layoutY="178.0" styleClass="content" text="JMenu, JColorChooser, ... .">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="26.0" layoutY="210.0" text="Sự khác nhau giữa GWT và Swing">
+      <Label layoutX="26.0" layoutY="210.0" styleClass="title" text="Sự khác nhau giữa GWT và Swing">
          <font>
             <Font size="25.0" />
          </font>
       </Label>
-      <Label layoutX="37.0" layoutY="253.0" text="Bảng sau liệt kê sự khác nhau đặc trưng giữa GWT và Swing">
+      <Label layoutX="37.0" layoutY="253.0" styleClass="content" text="Bảng sau liệt kê sự khác nhau đặc trưng giữa GWT và Swing">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="26.0" layoutY="678.0" text="Hệ thống cấp bậc trong các lớp Java Swing ">
+      <Label layoutX="26.0" layoutY="678.0" styleClass="title" text="Hệ thống cấp bậc trong các lớp Java Swing ">
          <font>
             <Font size="25.0" />
          </font>
       </Label>
-      <Label layoutX="37.0" layoutY="724.0" text="Hệ thống phân cấp của Java Swing API được đưa ra dưới đây.">
+      <Label layoutX="37.0" layoutY="724.0" styleClass="content" text="Hệ thống phân cấp của Java Swing API được đưa ra dưới đây.">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label contentDisplay="CENTER" layoutX="51.0" layoutY="299.0" prefHeight="45.0" prefWidth="49.0" styleClass="cellTableNormal" text="No." textAlignment="CENTER">
+      <Label contentDisplay="CENTER" layoutX="51.0" layoutY="299.0" prefHeight="45.0" prefWidth="49.0" styleClass="cellTable" text="No." textAlignment="CENTER">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label contentDisplay="CENTER" layoutX="51.0" layoutY="344.0" prefHeight="45.0" prefWidth="49.0" styleClass="cellTableNormal" text="1)" textAlignment="CENTER">
+      <Label fx:id="no1" contentDisplay="CENTER" layoutX="51.0" layoutY="344.0" prefHeight="45.0" prefWidth="49.0" styleClass="cellTable" text="1)" textAlignment="CENTER">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label contentDisplay="CENTER" layoutX="51.0" layoutY="387.0" prefHeight="45.0" prefWidth="49.0" styleClass="cellTableNormal" text="2)" textAlignment="CENTER">
+      <Label fx:id="no2" contentDisplay="CENTER" layoutX="51.0" layoutY="388.0" prefHeight="45.0" prefWidth="49.0" styleClass="cellTable" text="2)" textAlignment="CENTER">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label contentDisplay="CENTER" layoutX="51.0" layoutY="431.0" prefHeight="45.0" prefWidth="49.0" styleClass="cellTableNormal" text="3)" textAlignment="CENTER">
+      <Label fx:id="no3" contentDisplay="CENTER" layoutX="51.0" layoutY="431.0" prefHeight="45.0" prefWidth="49.0" styleClass="cellTable" text="3)" textAlignment="CENTER">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label contentDisplay="CENTER" layoutX="51.0" layoutY="475.0" prefHeight="73.0" prefWidth="49.0" styleClass="cellTableNormal" text="4)" textAlignment="CENTER">
+      <Label fx:id="no4" contentDisplay="CENTER" layoutX="51.0" layoutY="474.0" prefHeight="73.0" prefWidth="49.0" styleClass="cellTable" text="4)" textAlignment="CENTER">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label contentDisplay="CENTER" layoutX="51.0" layoutY="547.0" prefHeight="105.0" prefWidth="49.0" styleClass="cellTableNormalLast" text="5)" textAlignment="CENTER">
+      <Label fx:id="no5" contentDisplay="CENTER" layoutX="51.0" layoutY="547.0" prefHeight="105.0" prefWidth="49.0" styleClass="cellTable" text="5)" textAlignment="CENTER">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="100.0" layoutY="299.0" prefHeight="45.0" prefWidth="387.0" styleClass="cellTableNormal" text="Java GWT" textAlignment="CENTER">
+      <Label layoutX="100.0" layoutY="299.0" prefHeight="45.0" prefWidth="387.0" styleClass="cellTable" text="Java GWT" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Label fx:id="cell1" layoutX="100.0" layoutY="344.0" prefHeight="45.0" prefWidth="387.0" styleClass="cellSpecialLeft" text="Components của AWT là platform-dependent." textAlignment="CENTER">
+      <Label fx:id="cell1" layoutX="100.0" layoutY="344.0" prefHeight="45.0" prefWidth="387.0" styleClass="cellTable" text="Components của AWT là platform-dependent." textAlignment="CENTER">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label fx:id="cell2" layoutX="487.0" layoutY="344.0" prefHeight="45.0" prefWidth="387.0" styleClass="cellTableNormalRight" text="Components của AWT là platform-dependent." textAlignment="CENTER">
+      <Label fx:id="cell2" layoutX="487.0" layoutY="344.0" prefHeight="45.0" prefWidth="387.0" styleClass="cellTable" text="Components của AWT là platform-dependent." textAlignment="CENTER">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label fx:id="cell3" layoutX="100.0" layoutY="387.0" prefHeight="45.0" prefWidth="387.0" styleClass="cellSpecialLeft" text="AWT components are heavyweight." textAlignment="CENTER">
+      <Label fx:id="cell3" layoutX="100.0" layoutY="387.0" prefHeight="45.0" prefWidth="387.0" styleClass="cellTable" text="AWT components are heavyweight." textAlignment="CENTER">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label fx:id="cell4" layoutX="487.0" layoutY="387.0" prefHeight="45.0" prefWidth="387.0" styleClass="cellTableNormalRight" text="AWT components are heavyweight." textAlignment="CENTER">
+      <Label fx:id="cell4" layoutX="487.0" layoutY="387.0" prefHeight="45.0" prefWidth="387.0" styleClass="cellTable" text="AWT components are heavyweight." textAlignment="CENTER">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label fx:id="cell5" layoutX="100.0" layoutY="431.0" prefHeight="45.0" prefWidth="387.0" styleClass="cellSpecialLeft" text="AWT doesn't support pluggable look and feel." textAlignment="CENTER">
+      <Label fx:id="cell5" layoutX="100.0" layoutY="430.0" prefHeight="45.0" prefWidth="387.0" styleClass="cellTable" text="AWT doesn't support pluggable look and feel." textAlignment="CENTER">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label fx:id="cell8" layoutX="487.0" layoutY="476.0" prefHeight="73.0" prefWidth="387.0" styleClass="cellTableNormalRight" text="Swing provides more powerful components such as&#10; tables, lists, scrollpanes, colorchooser, tabbedpane etc.">
+      <Label fx:id="cell8" layoutX="487.0" layoutY="475.0" prefHeight="73.0" prefWidth="387.0" styleClass="cellTable" text="Swing provides more powerful components such as&#10; tables, lists, scrollpanes, colorchooser, tabbedpane etc.">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label fx:id="cell7" layoutX="100.0" layoutY="476.0" prefHeight="73.0" prefWidth="387.0" styleClass="cellSpecialLeft" text="AWT provides less components than Swing." textAlignment="CENTER">
+      <Label fx:id="cell7" layoutX="100.0" layoutY="475.0" prefHeight="73.0" prefWidth="387.0" styleClass="cellTable" text="AWT provides less components than Swing." textAlignment="CENTER">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label fx:id="cell6" layoutX="487.0" layoutY="431.0" prefHeight="45.0" prefWidth="387.0" styleClass="cellTableNormalRight" text="Swing supports pluggable look and feel." textAlignment="CENTER">
+      <Label fx:id="cell6" layoutX="487.0" layoutY="430.0" prefHeight="45.0" prefWidth="387.0" styleClass="cellTable" text="Swing supports pluggable look and feel." textAlignment="CENTER">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label fx:id="cell9" layoutX="100.0" layoutY="547.0" prefHeight="105.0" prefWidth="387.0" styleClass="cellTableNormalCenterlast" text="AWT doesn't follows MVC(Model View Controller) &#10;where model represents data, view represents &#10;presentation and controller acts as an interface between &#10;model and view.">
+      <Label fx:id="cell9" layoutX="100.0" layoutY="546.0" prefHeight="105.0" prefWidth="387.0" styleClass="cellTable" text="AWT doesn't follows MVC(Model View Controller) &#10;where model represents data, view represents &#10;presentation and controller acts as an interface between &#10;model and view.">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label fx:id="cell10" layoutX="487.0" layoutY="547.0" prefHeight="105.0" prefWidth="387.0" styleClass="cellTableNormalRightlast" text="Swing follows MVC.&#10;">
+      <Label fx:id="cell10" layoutX="487.0" layoutY="546.0" prefHeight="105.0" prefWidth="387.0" styleClass="cellTable" text="Swing follows MVC.&#10;">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="487.0" layoutY="299.0" prefHeight="45.0" prefWidth="387.0" styleClass="cellTableNormalRight" text="Java Swing" textAlignment="CENTER">
+      <Label layoutX="487.0" layoutY="299.0" prefHeight="45.0" prefWidth="387.0" styleClass="cellTable" text="Java Swing" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="336.0" layoutY="766.0" prefHeight="36.0" prefWidth="96.0" styleClass="cellClass" text="Object">
+      <Label fx:id="objectcl" layoutX="336.0" layoutY="766.0" prefHeight="36.0" prefWidth="96.0" styleClass="cellClass" text="Object">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="336.0" layoutY="875.0" prefHeight="36.0" prefWidth="96.0" styleClass="cellClass" text="Component">
+      <Label fx:id="componentcl" layoutX="336.0" layoutY="875.0" prefHeight="36.0" prefWidth="96.0" styleClass="cellClass" text="Component">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="212.0" layoutY="1021.0" prefHeight="36.0" prefWidth="96.0" styleClass="cellClass" text="Container">
+      <Label fx:id="containercl" layoutX="212.0" layoutY="1021.0" prefHeight="36.0" prefWidth="96.0" styleClass="cellClass" text="Container">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="479.0" layoutY="1021.0" prefHeight="36.0" prefWidth="96.0" styleClass="cellClass" text="JComponent">
+      <Label fx:id="jcomponentcl" layoutX="479.0" layoutY="1021.0" prefHeight="36.0" prefWidth="96.0" styleClass="cellClass" text="JComponent">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="118.0" layoutY="1160.0" prefHeight="36.0" prefWidth="96.0" styleClass="cellClass" text="Window">
+      <Label fx:id="windowcl" layoutX="118.0" layoutY="1160.0" prefHeight="36.0" prefWidth="96.0" styleClass="cellClass" text="Window">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="346.0" layoutY="1160.0" prefHeight="36.0" prefWidth="96.0" styleClass="cellClass" text="Panel">
+      <Label fx:id="panelcl" layoutX="346.0" layoutY="1160.0" prefHeight="36.0" prefWidth="96.0" styleClass="cellClass" text="Panel">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="346.0" layoutY="1276.0" prefHeight="36.0" prefWidth="96.0" styleClass="cellClass" text="Applet">
+      <Label fx:id="appletcl" layoutX="346.0" layoutY="1276.0" prefHeight="36.0" prefWidth="96.0" styleClass="cellClass" text="Applet">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="26.0" layoutY="1319.0" prefHeight="36.0" prefWidth="96.0" styleClass="cellClass" text="Frame">
+      <Label fx:id="framecl" layoutX="26.0" layoutY="1319.0" prefHeight="36.0" prefWidth="96.0" styleClass="cellClass" text="Frame">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="208.0" layoutY="1319.0" prefHeight="36.0" prefWidth="96.0" styleClass="cellClass" text="Dialog">
+      <Label fx:id="dialogcl" layoutX="208.0" layoutY="1319.0" prefHeight="36.0" prefWidth="96.0" styleClass="cellClass" text="Dialog">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="693.0" layoutY="766.0" prefHeight="36.0" prefWidth="96.0" styleClass="cellClass" text="JLabel">
+      <Label fx:id="jlabelcl" layoutX="712.0" layoutY="766.0" prefHeight="36.0" prefWidth="96.0" styleClass="cellClass" text="JLabel">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="693.0" layoutY="845.0" prefHeight="36.0" prefWidth="96.0" styleClass="cellClass" text="JList">
+      <Label fx:id="jlistcl" layoutX="712.0" layoutY="845.0" prefHeight="36.0" prefWidth="96.0" styleClass="cellClass" text="JList">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="693.0" layoutY="924.0" prefHeight="36.0" prefWidth="96.0" styleClass="cellClass" text="JTable">
+      <Label fx:id="jtablecl" layoutX="712.0" layoutY="924.0" prefHeight="36.0" prefWidth="96.0" styleClass="cellClass" text="JTable">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="693.0" layoutY="1003.0" prefHeight="36.0" prefWidth="96.0" styleClass="cellClass" text="JComboBox">
+      <Label fx:id="jcomboboxcl" layoutX="712.0" layoutY="1003.0" prefHeight="36.0" prefWidth="96.0" styleClass="cellClass" text="JComboBox">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="693.0" layoutY="1082.0" prefHeight="36.0" prefWidth="96.0" styleClass="cellClass" text="JSlider">
+      <Label fx:id="jslidercl" layoutX="712.0" layoutY="1082.0" prefHeight="36.0" prefWidth="96.0" styleClass="cellClass" text="JSlider">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="693.0" layoutY="1161.0" prefHeight="36.0" prefWidth="96.0" styleClass="cellClass" text="JMenu">
+      <Label fx:id="jmenucl" layoutX="712.0" layoutY="1161.0" prefHeight="36.0" prefWidth="96.0" styleClass="cellClass" text="JMenu">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="693.0" layoutY="1240.0" prefHeight="36.0" prefWidth="114.0" styleClass="cellClass" text="AbstractMenu">
+      <Label fx:id="abstractMenucl" layoutX="712.0" layoutY="1240.0" prefHeight="36.0" prefWidth="114.0" styleClass="cellClass" text="AbstractMenu">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="693.0" layoutY="1319.0" prefHeight="36.0" prefWidth="96.0" styleClass="cellClass" text="JButton">
+      <Label fx:id="jbuttoncl" layoutX="712.0" layoutY="1327.0" prefHeight="36.0" prefWidth="96.0" styleClass="cellClass" text="JButton">
          <font>
             <Font size="15.0" />
          </font>

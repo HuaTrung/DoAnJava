@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<Pane fx:id="mainIntro" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="2500.0" prefWidth="900.0" stylesheets="@JList.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.JButtonController">
+    <children>
+        <Label fx:id="title" layoutX="55.0" layoutY="34.0" styleClass="title" text="Java JList" />
+        <Label layoutX="55.0" layoutY="128.0" styleClass="title" text="JList class declaration" />
+        <Label layoutX="55.0" layoutY="77.0" styleClass="content" text="Đối tượng của lớp JList đại diện cho danh sách các mục văn bản. Danh sách các mục văn bản có thể được thiết lập để&#10;người dùng có thể chọn một mục hoặc nhiều mục. Nó kế thừa lớp JComponent." />
+        <Label layoutX="55.0" layoutY="172.0" styleClass="content" text="Hãy xem khai báo cho lớp javax.swing.JList." />
+        <Label layoutX="48.0" layoutY="214.0" prefHeight="36.0" prefWidth="788.0" styleClass="borderContentText" />
+        <HBox fx:id="declaTxt" layoutX="53.0" layoutY="218.0" prefHeight="36.0" prefWidth="778.0" />
+        <Label layoutX="48.0" layoutY="272.0" styleClass="title" text="Các constructor thường được sử dụng" />
+        <Label layoutX="211.0" layoutY="337.0" prefHeight="45.0" prefWidth="612.0" styleClass="cellTable" text="Description" textAlignment="CENTER">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+        <Label fx:id="cell6" layoutX="211.0" layoutY="469.0" prefHeight="45.0" prefWidth="612.0" styleClass="cellTable" text="Tạo một JList hiển thị các phần tử từ data model theo chỉ định, không null." textAlignment="CENTER">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label fx:id="cell5" layoutX="49.0" layoutY="469.0" prefHeight="45.0" prefWidth="163.0" styleClass="cellTable" text="JList(ListModel&lt;ary&gt; &#10;DataModel)" textAlignment="CENTER">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label fx:id="cell4" layoutX="211.0" layoutY="425.0" prefHeight="45.0" prefWidth="612.0" styleClass="cellTable" text="Tạo một JList hiển thị các phần tử trong mảng theo chỉ định." textAlignment="CENTER">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label fx:id="cell3" layoutX="49.0" layoutY="425.0" prefHeight="45.0" prefWidth="163.0" styleClass="cellTable" text="JList(ary[] listData)" textAlignment="CENTER">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label fx:id="cell2" layoutX="211.0" layoutY="381.0" prefHeight="45.0" prefWidth="612.0" styleClass="cellTable" text="Tạo 1 JList với một read-only data model rỗng." textAlignment="CENTER">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label fx:id="cell1" layoutX="49.0" layoutY="381.0" prefHeight="45.0" prefWidth="163.0" styleClass="cellTable" text="JList()" textAlignment="CENTER">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="49.0" layoutY="337.0" prefHeight="45.0" prefWidth="163.0" styleClass="cellTable" text="Constructor" textAlignment="CENTER">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="48.0" layoutY="545.0" styleClass="title" text="Các phương thức thường dùng của lớp:" />
+        <Label layoutX="48.0" layoutY="601.0" prefHeight="45.0" prefWidth="207.0" styleClass="cellTable" text="Methods" textAlignment="CENTER">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+        <Label fx:id="cell11" layoutX="48.0" layoutY="645.0" prefHeight="45.0" prefWidth="207.0" styleClass="cellTable" text="void addListSelectionListener&#10;(ListSelectionListener listener)" textAlignment="CENTER">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label fx:id="cell21" layoutX="254.0" layoutY="645.0" prefHeight="45.0" prefWidth="612.0" styleClass="cellTable" text="Được sử dụng để thêm listener vào danh sách, để được thông báo&#10;mỗi lần thay đổi lựa chọn xảy ra." textAlignment="CENTER">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label fx:id="cell31" layoutX="48.0" layoutY="689.0" prefHeight="45.0" prefWidth="207.0" styleClass="cellTable" text="int getSelectedIndex()" textAlignment="CENTER">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label fx:id="cell41" layoutX="254.0" layoutY="689.0" prefHeight="45.0" prefWidth="612.0" styleClass="cellTable" text="Được sử dụng để trả về chỉ mục ô được chọn nhỏ nhất." textAlignment="CENTER">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label fx:id="cell51" layoutX="48.0" layoutY="733.0" prefHeight="45.0" prefWidth="207.0" styleClass="cellTable" text="ListModel getModel()" textAlignment="CENTER">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label fx:id="cell61" layoutX="254.0" layoutY="733.0" prefHeight="45.0" prefWidth="612.0" styleClass="cellTable" text="Được sử dụng để trả về data model chứa một danh sách các mục&#10;được hiển thị bởi thành phần JList." textAlignment="CENTER">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="254.0" layoutY="601.0" prefHeight="45.0" prefWidth="612.0" styleClass="cellTable" text="Description" textAlignment="CENTER">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+        <Label fx:id="cell211" layoutX="254.0" layoutY="777.0" prefHeight="45.0" prefWidth="612.0" styleClass="cellTable" text="Được sử dụng để tạo ra một read-only ListModel từ một mảng các đối tượng." textAlignment="CENTER">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label fx:id="cell111" layoutX="48.0" layoutY="777.0" prefHeight="45.0" prefWidth="207.0" styleClass="cellTable" text="void setListData&#10;(Object[] listData)" textAlignment="CENTER">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="48.0" layoutY="844.0" styleClass="title" text="Java JList Example" />
+        <Label fx:id="wrappedLabelexample1" layoutX="48.0" layoutY="896.0" prefHeight="232.0" prefWidth="788.0" styleClass="borderContentText" />
+        <VBox fx:id="example1" layoutX="51.0" layoutY="896.0" prefHeight="36.0" prefWidth="788.0" />
+        <Label fx:id="ouputExample1" layoutX="49.0" layoutY="1141.0" style="-fx-text-fill: #610B38;" text="Output:">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+        <Pane fx:id="example1Pane" layoutX="182.0" layoutY="1184.0" prefHeight="92.0" prefWidth="426.0" />
+        <Label layoutX="62.0" layoutY="1336.0" styleClass="title" text="Java JList Example with ActionListener" />
+        <Label fx:id="ouputExample2" layoutX="50.0" layoutY="1816.0" style="-fx-text-fill: #610B38;" text="Output:">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+        <VBox fx:id="example2" layoutX="53.0" layoutY="1402.0" prefHeight="36.0" prefWidth="788.0" />
+        <Label fx:id="wrappedLabelexample2" layoutX="50.0" layoutY="1402.0" prefHeight="399.0" prefWidth="788.0" styleClass="borderContentText" />
+        <Pane fx:id="example2Pane" layoutX="169.0" layoutY="1837.0" prefHeight="129.0" prefWidth="426.0" />
+    </children>
+</Pane>

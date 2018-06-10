@@ -39,7 +39,6 @@ public class DangNhapChinh implements Initializable {
 		btnDangNhap.setOnMouseClicked(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent arg0) {
-			//	if (txtdangnhap.getText() == "trung" && txtmatkhau.getText() == "trung") {
 					FadeTransition fadeTransition = new FadeTransition();
 					fadeTransition.setDuration(Duration.millis(200));
 					fadeTransition.setNode(LoginView.mainSPane);
@@ -58,7 +57,6 @@ public class DangNhapChinh implements Initializable {
 						}
 					});
 					fadeTransition.play();
-//				}
 			}
 
 		});

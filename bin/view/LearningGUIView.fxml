@@ -108,7 +108,7 @@
          <children>
             <JFXScrollPane fx:id="scrollPane" prefHeight="643.0" prefWidth="124.0">
                <content>
-                  <VBox fx:id="VboxMenu" prefHeight="642.0" prefWidth="111.0">
+                  <VBox fx:id="VboxMenu" prefHeight="642.0" prefWidth="111.0" style="-fx-background-color: #fff9fb;">
                      <children>
                         <Label prefHeight="1.0" prefWidth="110.0" />
                      </children></VBox>

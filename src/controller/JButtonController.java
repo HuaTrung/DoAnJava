@@ -57,6 +57,13 @@ public class JButtonController implements Initializable {
     
 	ToolTipCustom exampl1btn = new ToolTipCustom("Hello! I'm JButton", 250, 1280);
 
+	private Text addText(String content,Color color) {
+		Text text = new Text(content);
+		text.setFont(Font.font("Courier New", 16));
+		text.setFill(color);
+		text.setStyle("-fx-font-weight: bold");
+		return text;
+	}
 	private void createSwingContent(final SwingNode swingNode) {
 		SwingUtilities.invokeLater(new Runnable() {
 			@Override
@@ -105,6 +112,7 @@ public class JButtonController implements Initializable {
 			}
 		});
 	}
+
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// final SwingNode swingNode = new SwingNode();
@@ -114,37 +122,14 @@ public class JButtonController implements Initializable {
 		// mainIntro.getChildren().add(swingNode);
 		// System.out.println(javafx.scene.text.Font.getFamilies());
 		TextFlow txt = new TextFlow();
-		Text text1 = new Text(" public class");
-		text1.setFont(Font.font("Courier New", 16));
-		text1.setFill(Color.DODGERBLUE);
-		text1.setStyle("-fx-font-weight: bold");
 
-		Text text2 = new Text(" JButton");
-		text2.setFont(Font.font("Courier New", 16));
-		text2.setFill(Color.BLACK);
-		text2.setStyle("-fx-font-weight: bold");
-
-		Text text3 = new Text(" extends");
-		text3.setFont(Font.font("Courier New", 16));
-		text3.setFill(Color.DODGERBLUE);
-		text3.setStyle("-fx-font-weight: bold");
-
-		Text text4 = new Text(" AbstractButton");
-		text4.setFont(Font.font("Courier New", 16));
-		text4.setFill(Color.BLACK);
-		text4.setStyle("-fx-font-weight: bold");
-
-		Text text5 = new Text(" implements");
-		text5.setFont(Font.font("Courier New", 16));
-		text5.setFill(Color.DODGERBLUE);
-		text5.setStyle("-fx-font-weight: bold");
-
-		Text text6 = new Text(" Accessible");
-		text6.setFont(Font.font("Courier New", 16));
-		text6.setFill(Color.BLACK);
-		text6.setStyle("-fx-font-weight: bold");
-
-		txt.getChildren().addAll(text1, text2, text3, text4, text5, text6);
+		txt.getChildren().addAll(
+				addText(" public class",Color.DODGERBLUE),
+				addText(" JButton",Color.BLACK), 
+				addText(" extends",Color.DODGERBLUE), 
+				addText(" AbstractButton",Color.BLACK), 
+				addText(" implements",Color.DODGERBLUE), 
+				addText(" Accessible",Color.BLACK));
 		declaTxt.getChildren().addAll(txt);
 		declaTxt.setMargin(txt, new Insets(5, 10, 5, 10));
 		declaTxt.toFront();
@@ -153,77 +138,62 @@ public class JButtonController implements Initializable {
 		Text ele1 = new Text(" import");
 		ele1.setFont(Font.font("Courier New", 16));
 		ele1.setFill(Color.DODGERBLUE);
-		// ele1.setStyle("-fx-font-weight: bold");
 
 		Text ele2 = new Text(" javax.swing.*;\n");
 		ele2.setFont(Font.font("Courier New", 16));
 		ele2.setFill(Color.BLACK);
-		// ele2.setStyle("-fx-font-weight: bold");
 
 		Text ele3 = new Text(" public class");
 		ele3.setFont(Font.font("Courier New", 16));
 		ele3.setFill(Color.DODGERBLUE);
-		// ele3.setStyle("-fx-font-weight: bold");
 
 		Text ele4 = new Text(" ButtonExample {\n");
 		ele4.setFont(Font.font("Courier New", 16));
 		ele4.setFill(Color.BLACK);
-		// ele4.setStyle("-fx-font-weight: bold");
 
 		Text ele5 = new Text(" public static void");
 		ele5.setFont(Font.font("Courier New", 16));
 		ele5.setFill(Color.DODGERBLUE);
-		// ele5.setStyle("-fx-font-weight: bold");
 
 		Text ele6 = new Text(" main(String[] args) {\n");
 		ele6.setFont(Font.font("Courier New", 16));
 		ele6.setFill(Color.BLACK);
-		// ele6.setStyle("-fx-font-weight: bold");
 
 		Text ele7 = new Text("    JFrame f=");
 		ele7.setFont(Font.font("Courier New", 16));
 		ele7.setFill(Color.BLACK);
-		// ele7.setStyle("-fx-font-weight: bold");
 
 		Text ele8 = new Text("new");
 		ele8.setFont(Font.font("Courier New", 16));
 		ele8.setFill(Color.DODGERBLUE);
-		// ele8.setStyle("-fx-font-weight: bold");
 
 		Text ele9 = new Text(" JFrame(");
 		ele9.setFont(Font.font("Courier New", 16));
 		ele9.setFill(Color.BLACK);
-		// ele9.setStyle("-fx-font-weight: bold");
 
 		Text ele10 = new Text("\"Button Example\"");
 		ele10.setFont(Font.font("Courier New", 16));
 		ele10.setFill(Color.BLACK);
-		// ele10.setStyle("-fx-font-weight: bold");
 
 		Text ele11 = new Text(");  \r\n" + "    JButton b=");
 		ele11.setFont(Font.font("Courier New", 16));
 		ele11.setFill(Color.BLACK);
-		// ele11.setStyle("-fx-font-weight: bold");
 
 		Text ele12 = new Text("new ");
 		ele12.setFont(Font.font("Courier New", 16));
 		ele12.setFill(Color.DODGERBLUE);
-		// ele12.setStyle("-fx-font-weight: bold");
 
 		Text ele13 = new Text("JButton(");
 		ele13.setFont(Font.font("Courier New", 16));
 		ele13.setFill(Color.BLACK);
-		// ele13.setStyle("-fx-font-weight: bold");
 
 		Text ele14 = new Text("\"Click Here\"");
 		ele14.setFont(Font.font("Courier New", 16));
 		ele14.setFill(Color.DODGERBLUE);
-		// ele14.setStyle("-fx-font-weight: bold");
 
 		Text ele15 = new Text(");  \r\n" + "    b.setBounds(");
 		ele15.setFont(Font.font("Courier New", 16));
 		ele15.setFill(Color.BLACK);
-		// ele15.setStyle("-fx-font-weight: bold");
 
 		Text ele16 = new Text("50,100,95,30");
 		ele16.setFont(Font.font("Courier New", 16));
