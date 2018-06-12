@@ -75,7 +75,7 @@
    <center>
       <Pane fx:id="learnPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="275.0" fitWidth="401.0" layoutX="92.0" layoutY="47.0" opacity="0.9" pickOnBounds="true" preserveRatio="true" styleClass="btnSection">
+            <ImageView fx:id="imgv1" fitHeight="275.0" fitWidth="401.0" layoutX="92.0" layoutY="47.0" opacity="0.9" pickOnBounds="true" preserveRatio="true" styleClass="btnSection">
                <image>
                   <Image url="@../image/real_mina.jpg" />
                </image>
@@ -87,7 +87,7 @@
             </ImageView>
             <ImageView fx:id="imgv3" fitHeight="273.0" fitWidth="274.0" layoutX="735.0" layoutY="46.0" opacity="0.9" pickOnBounds="true" preserveRatio="true" styleClass="btnSection">
                <image>
-                  <Image url="@../image/mina3.jpg" />
+                  <Image url="@../image/swing.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="236.0" fitWidth="230.0" layoutX="574.0" layoutY="357.0" opacity="0.9" pickOnBounds="true" preserveRatio="true" styleClass="btnSection">

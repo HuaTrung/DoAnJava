@@ -16,7 +16,7 @@ public class Main extends Application {
 			Parent root = FXMLLoader.load(getClass().getResource("/view/LearningGUIView.fxml"));
 			Scene scene = new Scene(root);
 //			scene.getStylesheets().add(getClass().getResource("/view/login.css").toExternalForm());
-			//primaryStage.initStyle(StageStyle.UNDECORATED);
+//			primaryStage.initStyle(StageStyle.UNDECORATED);
 			primarySScene=scene;
 			primarySStage=primaryStage;
 			primarySStage.setScene(primarySScene);

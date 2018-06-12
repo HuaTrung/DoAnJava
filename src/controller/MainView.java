@@ -11,16 +11,22 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import javafx.util.Duration;
+import main.Main;
 
 public class MainView implements Initializable {
 
 	@FXML
 	private ImageView imgv3;
+	@FXML
+	private ImageView imgv1;
 	@FXML
 	private Pane learnPane;
 	@FXML
@@ -29,6 +35,13 @@ public class MainView implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
+		imgv1.setOnMouseClicked(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent arg0) {
+				loadNextScene1();
+			}
+
+		});
 		imgv3.setOnMouseClicked(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent arg0) {
@@ -38,7 +51,7 @@ public class MainView implements Initializable {
 				fadeTransition.setFromValue(1);
 				fadeTransition.setToValue(0);
 				fadeTransition.setOnFinished((ActionEvent event) -> {
-					loadNextScene();
+					loadNextScene3();
 				});
 				fadeTransition.play();
 			}
@@ -46,7 +59,32 @@ public class MainView implements Initializable {
 		});
 	}
 
-	private void loadNextScene() {
+	private void loadNextScene1() {
+		AnchorPane secondaryLayout = new AnchorPane();
+		Parent guiView;
+		try {
+			guiView = FXMLLoader.load(getClass().getResource("/view/SomeExercise.fxml"));
+			secondaryLayout.getChildren().removeAll();
+			secondaryLayout.getChildren().setAll(guiView);
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
+		Scene secondScene = new Scene(secondaryLayout);
+
+		Stage secondStage = new Stage();
+		secondStage.setTitle("JButton Example");
+		secondStage.setScene(secondScene);
+
+		// Set position of second window, related to primary window.
+		secondStage.setX(Main.primarySStage.getX() );
+		secondStage.setY(Main.primarySStage.getY() );
+		secondStage.setResizable(false);
+		secondStage.show();
+	}
+	private void loadNextScene3() {
 		try {
 			Parent guiView;
 			guiView = FXMLLoader.load(getClass().getResource("/view/LearningGUIView.fxml"));

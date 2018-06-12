@@ -66,17 +66,17 @@ public class LearningGUIView implements Initializable {
 				if (selectedButton != index) {
 
 					FadeTransition fadeIn=new FadeTransition();
-					fadeIn.setDuration(Duration.millis(100));
+					fadeIn.setDuration(Duration.millis(200));
 					fadeIn.setNode(GuiPane);
 					fadeIn.setFromValue(0);
 					fadeIn.setToValue(1);
-					
 					FadeTransition fadeOut=new FadeTransition();
 					fadeOut.setDuration(Duration.millis(100));
 					fadeOut.setNode(GuiPane);
 					fadeOut.setFromValue(1);
 					fadeOut.setToValue(0);
 					fadeOut.setOnFinished((arg) -> {
+						fadeIn.play();
 						try {
 							Parent fxml = FXMLLoader.load(getClass().getResource("/view/" + name.toString() + ".fxml"));
 							GuiPane.getChildren().removeAll();
@@ -119,7 +119,6 @@ public class LearningGUIView implements Initializable {
 				@Override
 				protected void interpolate(double frac) {
 					addButton.setStyle("-fx-border-color:rgba(245,0,87," + Double.toString(round(1 - frac, 3)) + ");");
-					System.out.println(round(1 - frac, 3));
 				}
 			};
 			animation.play();
@@ -152,16 +151,16 @@ public class LearningGUIView implements Initializable {
 		// button be assigned
 		addButton(new Button("Giới thiệu"), "IntroSwing", 1500, 0);
 		addButton(new Button("JButton"), "JButton", 2200, 1);
-		addButton(new Button("JChecKBox"), "JChecKBox", 2200, 2);
-		addButton(new Button("JColorChooser"), "JColorChooser", 2200, 3);
-		addButton(new Button("JComboBox"), "JComboBox", 2200, 4);
-		addButton(new Button("JList"), "JList", 2200, 5);
+		addButton(new Button("JCheckBox"), "JChecKBox", 2500, 2);
+		addButton(new Button("JColorChooser"), "JColorChooser", 2700, 3);
+		addButton(new Button("JComboBox"), "JComboBox", 2500, 4);
+		addButton(new Button("JList"), "JList", 2900, 5);
 		addButton(new Button("JOptionPane"), "JOptionPane", 2200, 6);
-		addButton(new Button("JPasswordField"), "JPasswordField", 2200, 7);
-		addButton(new Button("JProgressBar"), "JProgressBar", 2200, 8);
-		addButton(new Button("JRadioButton"), "JRadioButton", 2200, 9);
-		addButton(new Button("JTable"), "JTable", 2200, 10);
-		addButton(new Button("JTextArea"), "JTextArea", 2200, 11);
+		addButton(new Button("JPasswordField"), "JPasswordField", 2100, 7);
+		addButton(new Button("JProgressBar"), "JProgressBar", 1800, 8);
+		addButton(new Button("JRadioButton"), "JRadioButton", 2700, 9);
+		addButton(new Button("JTable"), "JTable", 1400, 10);
+		addButton(new Button("JTextArea"), "JTextArea", 2400, 11);
 
 		VboxMenu.setSpacing(0.5f);
 		MainGuiPane.vvalueProperty().addListener(new ChangeListener<Number>() {

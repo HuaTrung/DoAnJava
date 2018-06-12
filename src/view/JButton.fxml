@@ -155,5 +155,6 @@
       <VBox fx:id="example2" layoutX="53.0" layoutY="1487.0" prefHeight="36.0" prefWidth="788.0" />
       <Label fx:id="wrappedLabelexample2" layoutX="50.0" layoutY="1487.0" prefHeight="399.0" prefWidth="788.0" styleClass="borderContentText" />
       <Pane fx:id="example2Pane" layoutX="169.0" layoutY="1922.0" prefHeight="129.0" prefWidth="426.0" />
+      <JFXButton fx:id="tryBtn" layoutX="50.0" layoutY="2083.0" prefHeight="45.0" prefWidth="175.0" styleClass="tryYourSelf" text="TRY TOURSELF" />
    </children>
 </Pane>

@@ -1,0 +1,28 @@
+.timeCss{
+   	-fx-border-color:#f50057;
+    -fx-background-radius: 10.0%;
+    -fx-text-fill: #f50057;
+    -fx-font-weight:bold;
+    -fx-font-size:16.0;
+}
+.runBtn{
+	-fx-border-color:#f50057;
+    -fx-background-radius: 10.0%;
+    -fx-text-fill: #f50057;
+    -fx-font-weight:bold;
+    -fx-font-size:16.0;
+}
+.outTxt{
+	-fx-border-color:#f50057;
+    -fx-background-radius: 10.0%;
+}
+.table-view .table-cell {
+    -fx-padding: 16 0 16 0;
+    -fx-alignment: top-center;
+    -fx-background-color:#fafafa;
+    -fx-border-width:0.2px;
+    -fx-border-color:#000000;
+}
+.table-row-cell:selected .table-cell {
+    -fx-text-fill: BLACK;
+}

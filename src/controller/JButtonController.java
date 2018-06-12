@@ -2,6 +2,7 @@ package controller;
 
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -10,12 +11,22 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
+import com.jfoenix.controls.JFXButton;
+
+import javafx.animation.Animation;
+import javafx.animation.Interpolator;
+import javafx.animation.Timeline;
+import javafx.animation.Transition;
 import javafx.application.Platform;
 import javafx.embed.swing.SwingNode;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -23,6 +34,9 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
+import javafx.stage.Stage;
+import javafx.util.Duration;
+import main.Main;
 import utils.ToolTipCustom;
 
 public class JButtonController implements Initializable {
@@ -47,23 +61,26 @@ public class JButtonController implements Initializable {
 
 	@FXML
 	private Pane example1Pane;
-	
-    @FXML
-    private VBox example2;
-    
 
-    @FXML
-    private Pane example2Pane;
-    
+	@FXML
+	private VBox example2;
+
+	@FXML
+	private Pane example2Pane;
+
+	@FXML
+	private JFXButton tryBtn;
+
 	ToolTipCustom exampl1btn = new ToolTipCustom("Hello! I'm JButton", 250, 1280);
 
-	private Text addText(String content,Color color) {
+	private Text addText(String content, Color color) {
 		Text text = new Text(content);
 		text.setFont(Font.font("Courier New", 16));
 		text.setFill(color);
 		text.setStyle("-fx-font-weight: bold");
 		return text;
 	}
+
 	private void createSwingContent(final SwingNode swingNode) {
 		SwingUtilities.invokeLater(new Runnable() {
 			@Override
@@ -87,13 +104,14 @@ public class JButtonController implements Initializable {
 			}
 		});
 	}
-	private void createSwingContent2(final SwingNode swingNode1,final SwingNode swingNode2) {
+
+	private void createSwingContent2(final SwingNode swingNode1, final SwingNode swingNode2) {
 		SwingUtilities.invokeLater(new Runnable() {
 			@Override
 			public void run() {
-				JTextField txttemp=new JTextField();
+				JTextField txttemp = new JTextField();
 				txttemp.setPreferredSize(new Dimension(150, 30));
-				
+
 				swingNode1.setContent(new JButton(new AbstractAction("Click me!") {
 					@Override
 					public void actionPerformed(ActionEvent arg0) {
@@ -101,16 +119,26 @@ public class JButtonController implements Initializable {
 						Platform.runLater(new Runnable() {
 							@Override
 							public void run() {
-								txttemp.setText("Thanks for using our app.");				
+								txttemp.setText("Thanks for using our app.");
 							}
 						});
 
 					}
 				}));
-				
+
 				swingNode2.setContent(txttemp);
 			}
 		});
+	}
+
+	public static double round(double value, int places) {
+		if (places < 0)
+			throw new IllegalArgumentException();
+
+		long factor = (long) Math.pow(10, places);
+		value = value * factor;
+		long tmp = Math.round(value);
+		return (double) tmp / factor;
 	}
 
 	@Override
@@ -123,13 +151,9 @@ public class JButtonController implements Initializable {
 		// System.out.println(javafx.scene.text.Font.getFamilies());
 		TextFlow txt = new TextFlow();
 
-		txt.getChildren().addAll(
-				addText(" public class",Color.DODGERBLUE),
-				addText(" JButton",Color.BLACK), 
-				addText(" extends",Color.DODGERBLUE), 
-				addText(" AbstractButton",Color.BLACK), 
-				addText(" implements",Color.DODGERBLUE), 
-				addText(" Accessible",Color.BLACK));
+		txt.getChildren().addAll(addText(" public class", Color.DODGERBLUE), addText(" JButton", Color.BLACK),
+				addText(" extends", Color.DODGERBLUE), addText(" AbstractButton", Color.BLACK),
+				addText(" implements", Color.DODGERBLUE), addText(" Accessible", Color.BLACK));
 		declaTxt.getChildren().addAll(txt);
 		declaTxt.setMargin(txt, new Insets(5, 10, 5, 10));
 		declaTxt.toFront();
@@ -414,14 +438,57 @@ public class JButtonController implements Initializable {
 		example2.setMargin(txtcode2, new Insets(5, 10, 5, 10));
 		example2.toFront();
 
+		final Animation animation = new Transition() {
+			{
+				setCycleDuration(Duration.millis(1000));
+				setInterpolator(Interpolator.EASE_OUT);
+			}
+
+			@Override
+			protected void interpolate(double frac) {
+				String x = Double.toString(round(frac, 3) * 100);
+				tryBtn.setStyle("-fx-background-color: linear-gradient(from 0% 50% to 100% 50%, #ffd8e5 0%, #ffd8e5 "
+						+ x + "%, #ffffff " + x + "%, #ffffff 100%);");
+			}
+		};
+		animation.setCycleCount(Timeline.INDEFINITE);
+		animation.setAutoReverse(true);
+		animation.play();
+
+		tryBtn.setOnAction(arg01 -> {
+
+			AnchorPane secondaryLayout = new AnchorPane();
+			Parent guiView;
+			try {
+				guiView = FXMLLoader.load(getClass().getResource("/view/SomeExercise.fxml"));
+				secondaryLayout.getChildren().removeAll();
+				secondaryLayout.getChildren().setAll(guiView);
+				
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		
+			Scene secondScene = new Scene(secondaryLayout);
+
+			Stage secondStage = new Stage();
+			secondStage.setTitle("JButton Example");
+			secondStage.setScene(secondScene);
+
+			// Set position of second window, related to primary window.
+			secondStage.setX(Main.primarySStage.getX() + 50);
+			secondStage.setY(Main.primarySStage.getY() + 50);
+			secondStage.setResizable(false);
+			secondStage.show();
+		});
 		final SwingNode swingNode1 = new SwingNode();
 		final SwingNode swingNode2 = new SwingNode();
-		createSwingContent2(swingNode1,swingNode2);
+		createSwingContent2(swingNode1, swingNode2);
 		swingNode1.setLayoutX(10);
 		swingNode1.setLayoutY(50);
 		swingNode2.setLayoutX(10);
 		swingNode2.setLayoutY(0);
-		example2Pane.getChildren().addAll(swingNode1,swingNode2);
+		example2Pane.getChildren().addAll(swingNode1, swingNode2);
 
 		// BufferedReader br = null;
 		// FileReader fr = null;

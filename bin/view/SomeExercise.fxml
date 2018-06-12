@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1000.0" stylesheets="@SomeExercise.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SomeExerciseController">
+   <children>
+      <Label fx:id="timeEslapsed" alignment="CENTER" layoutX="34.0" layoutY="17.0" prefHeight="40.0" prefWidth="952.0" styleClass="timeCss" text="Label" />
+      <Label fx:id="title" layoutX="24.0" layoutY="95.0" prefHeight="24.0" prefWidth="104.0" text="Label" />
+      <Label fx:id="quest" layoutX="24.0" layoutY="131.0" prefHeight="125.0" prefWidth="556.0" text="Label" />
+      <TextArea fx:id="editCode" layoutX="24.0" layoutY="301.0" prefHeight="352.0" prefWidth="567.0" />
+      <TableView fx:id="tableResult" layoutX="737.0" layoutY="304.0" prefHeight="352.0" prefWidth="241.0">
+        <columns>
+          <TableColumn fx:id="inputCol" prefWidth="72.0" text="Input" />
+          <TableColumn fx:id="ouputCol" prefWidth="70.0" text="Output" />
+            <TableColumn fx:id="youroputCol" prefWidth="95.0" text="Your output" />
+        </columns>
+      </TableView>
+      <Label layoutX="605.0" layoutY="74.0" text="OUTPUT">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="outputTxt" layoutX="605.0" layoutY="102.0" prefHeight="187.0" prefWidth="383.0" styleClass="outTxt" />
+      <JFXButton fx:id="runBtn" layoutX="605.0" layoutY="480.0" prefHeight="39.0" prefWidth="93.0" styleClass="runBtn" text="RUN">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="805.0" layoutY="665.0" text="Bảng tra kết quả">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="title1" layoutX="24.0" layoutY="268.0" prefHeight="24.0" prefWidth="556.0" text="public int sortaSum(int a, int b) {" />
+      <Label fx:id="title2" layoutX="25.0" layoutY="653.0" prefHeight="24.0" prefWidth="104.0" text="}" />
+   </children>
+</AnchorPane>
