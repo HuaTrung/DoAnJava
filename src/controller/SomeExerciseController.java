@@ -8,6 +8,7 @@ import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.ResourceBundle;
 
@@ -18,21 +19,29 @@ import javax.tools.ToolProvider;
 import org.sqlite.SQLiteConfig;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXDialog;
+import com.jfoenix.controls.JFXDialogLayout;
 
 import javafx.animation.Animation;
 import javafx.animation.Interpolator;
 import javafx.animation.Transition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.StackPane;
 import javafx.scene.text.Font;
+import javafx.scene.text.Text;
+import javafx.util.Callback;
 import javafx.util.Duration;
 import utils.DynamicCompiler.CompiledClassLoader;
 import utils.DynamicCompiler.SimpleJavaFileManager;
@@ -77,12 +86,16 @@ public class SomeExerciseController implements Initializable {
 	@FXML
 	private TableColumn<TheTestCase, String> youroputCol;
 
+	@FXML
+    private StackPane showDialog;
+	
 	private String content;
 	private String error;
 	private String tenham;
 	private String titleCode;
 	private int IDCode;
-
+	private ArrayList<String> arr;
+	private boolean goodJob;
 	private String runIt(String input) {
 		String[] inputS = input.split(",");
 		error = "";
@@ -146,7 +159,6 @@ public class SomeExerciseController implements Initializable {
 		} finally {
 			if (error.length() > 1) {
 				outputTxt.setText("Xem lại đi, sai rồi kìa \n" + error);
-
 			}
 		}
 		return test.toString();
@@ -172,6 +184,7 @@ public class SomeExerciseController implements Initializable {
 							+ Integer.toString(IDCode) + ";");
 			while (rs.next()) {
 				result = runIt(rs.getString("input"));
+				arr.add(rs.getString("output"));
 				TheTestCase nt = new TheTestCase(rs.getString("input"), rs.getString("output"), result);
 				dataNotes.add(nt);
 			}
@@ -201,13 +214,12 @@ public class SomeExerciseController implements Initializable {
 		}
 		utils.ConnectDatabase.conn.close();
 	}
-
-	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
-		IDCode = 1;
+	private void init() {
+		goodJob=false;
+		arr = new ArrayList<String>();
 		final Animation animation = new Transition() {
 			{
-				setCycleDuration(Duration.millis(300000));
+				setCycleDuration(Duration.millis(30000));
 				setInterpolator(Interpolator.EASE_OUT);
 			}
 
@@ -225,6 +237,39 @@ public class SomeExerciseController implements Initializable {
 					timeEslapsed.setText(Double.toString(JButtonController.round(frac, 3) * 100) + "%");
 			}
 		};
+		animation.setOnFinished(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				if(!goodJob) {
+				
+					JFXDialogLayout content=new JFXDialogLayout();
+					content.setHeading(new Text("YOU LOSE! TRY MORE"));
+					content.setBody(new Text("Stay true to yourself, yet always be open to learn.\n"
+							+ " Work hard, and never give up on your dreams,\n"
+							+ " even when nobody else believes they can come true but you.\n"
+							+ " These are not cliches but real tools you need no matter \n"
+							+ "what you do in life to stay focused on your path.\r\n"));
+					JFXDialog dialog=new JFXDialog(showDialog,content,JFXDialog.DialogTransition.CENTER);
+					JFXButton btn=new JFXButton("Okay. GO!");
+					btn.setOnAction(new EventHandler<ActionEvent>() {
+
+						@Override
+						public void handle(ActionEvent arg0) {
+							// TODO Auto-generated method stub
+							dialog.close();
+							editCode.setText("");
+							init();
+						}
+						
+					});
+					content.setActions(btn);
+					dialog.show();
+				}
+			}
+		
+		});
 		animation.play();
 		outputTxt.setText("Work Hard, Do your best, Have Fun!");
 		outputTxt.setMaxWidth(380);
@@ -246,20 +291,123 @@ public class SomeExerciseController implements Initializable {
 			e1.printStackTrace();
 		}
 		runBtn.setOnAction(arg01 -> {
-			content = "if((a+b)>=10&&(a+b)<=19)\r\n" + "  return 20;\r\n" + "  else return a+b;";
+			content =editCode.getText();
+			
+			// Thread t1 = new Thread(new Runnable() {
+			// @Override
+			// public void run() {
+			// Platform.runLater(new Runnable() {
+			// @Override
+			// public void run() {
+			// try {
+			// populateTable();
+			// } catch (SQLException e) {
+			// // TODO Auto-generated catch block
+			// e.printStackTrace();
+			// }
+			// }
+			// });
+			// }
+			// });
+			//
+			// Thread t2 = new Thread(new Runnable() {
+			// @Override
+			// public void run() {
+			// Platform.runLater(new Runnable() {
+			// @Override
+			// public void run() {
+			//
+			// }
+			// });
+			//
+			// }
+			// });
+			try {
+				populateTable();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			youroputCol
+					.setCellFactory(new Callback<TableColumn<TheTestCase, String>, TableCell<TheTestCase, String>>() {
+						@Override
+						public TableCell<TheTestCase, String> call(
+								TableColumn<TheTestCase, String> soCalledFriendStringTableColumn) {
+							return new TableCell<TheTestCase, String>() {
+								@Override
+								public void updateItem(String item, boolean empty) {
+									super.updateItem(item, empty);
+									if (item != null) {
+										final Animation animation = new Transition() {
+											{
+												setCycleDuration(Duration.millis(500));
+												setInterpolator(Interpolator.EASE_OUT);
+											}
 
-			Thread t = new Thread(new Runnable() {
-				@Override
-				public void run() {
-					try {
-						populateTable();
-					} catch (SQLException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				}
-			});
-			t.start();
+											@Override
+											protected void interpolate(double frac) {
+												String x = Double.toString(JButtonController.round(frac, 3) * 100);
+												setStyle(
+														"-fx-background-color: linear-gradient(from 0% 50% to 100% 50%, #ffd8e5 0%, #ffd8e5 "
+																+ x + "%, #ffffff " + x + "%, #ffffff 100%);");
+											}
+										};
+										animation.setAutoReverse(false);
+										animation.setOnFinished(new EventHandler<ActionEvent>() {
+											@Override
+											public void handle(ActionEvent actionEvent) {
+												int pos = getIndex();
+												goodJob=true;
+												if (pos >= 0) {
+													if (arr.get(pos).equals(item.toString())) {
+														setStyle("-fx-background-color:#64dd17");
+													} else {
+														setStyle("-fx-background-color:#c62828");
+														goodJob=false;
+													}
+												}
+												if(goodJob&&pos==(arr.size()-1)) {
+													JFXDialogLayout content=new JFXDialogLayout();
+													content.setHeading(new Text("GOOD JOB"));
+													content.setBody(new Text("If I said to most of the people who auditioned,\n"
+															+ " 'Good job, awesome, well done,' it would have made me actually look and feel ridiculous.\n"
+															+ " It's quite obvious most of the people who turned up for this audition were hopeless.\r\n" 
+															));
+													JFXDialog dialog=new JFXDialog(showDialog,content,JFXDialog.DialogTransition.CENTER);
+													JFXButton btn=new JFXButton("Okay. GO!");
+													btn.setOnAction(new EventHandler<ActionEvent>() {
+
+														@Override
+														public void handle(ActionEvent arg0) {
+															// TODO Auto-generated method stub
+															dialog.close();
+															IDCode++;
+															editCode.setText("");
+															init();
+														}
+														
+													});
+													content.setActions(btn);
+													dialog.show();
+												}
+												setText(item.toString());
+											}
+										});
+										animation.play();
+
+									} else {
+										setText(null);
+									}
+								}
+							};
+						}
+					});
+
 		});
+	}
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		IDCode = 1;
+		init();
 	}
 }

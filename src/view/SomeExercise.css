@@ -16,8 +16,11 @@
 	-fx-border-color:#f50057;
     -fx-background-radius: 10.0%;
 }
+.parent{
+  -fx-background-color: linear-gradient(#fcfafb 0%, #fff8fb 40%, #ffebee 70%, #fce4ec 100%);
+}
 .table-view .table-cell {
-    -fx-padding: 16 0 16 0;
+    -fx-padding: 5 0 5 0;
     -fx-alignment: top-center;
     -fx-background-color:#fafafa;
     -fx-border-width:0.2px;
